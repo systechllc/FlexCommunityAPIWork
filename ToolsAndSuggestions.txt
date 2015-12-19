@@ -1,0 +1,98 @@
+A few suggestions:
+
+Tools:
+
+Visual Studio 2015 Community Edition - This is free.  It is Microsoft's flagship IDE that allows you
+develope in C#, VB and C++.  If you wish to play with the FlexRadio provided API you will need to 
+download and install this tool. This tool runs under Windows.  It does run on a Mac using 
+Parallels and VMWare Fusion and a Windows Guest OS.  Under linux you will have to use a similar
+virtual technology and run a Windows Guest OS.
+
+Qt Community V5.5.1 - This is also free as long as you agree to make your source available (I am
+not sure exactly how they would check) and you agree to use an LGPL or GPL license.  Qt is based on
+C++ and is completely cross platform.  Programs written using standard Qt constructs and libraries
+can be cross compiled to run on Windows, Mac, Linux and many hand held devices.   It is not quite
+as easy as simply pushing a button and you have a Mac or Linux version but it is close.  Qt itself
+does not have a compiler.  You can choose to use any number of compilers.  The Qt site for downloads
+provides the option of the free MinGL compiler which they will install for you.  If you are on a Mac
+then you should have Xcode downloaded and installed from the App store.  Linux distros usually have
+a compiler installed.  Qt under C++ creates fast executable that have no dependence upon .NET.  While
+C++ can be developed within Visual Studio they have discontinued development of a C++ GUI framework
+so your options are to use Qt framework or some of the other GUI frameworks out there.
+
+Xojo - Xojo is a cross platform BASIC based language that has come a very long way since it's
+beginnings.   Currently it is a little expensive.  You can download the Xojo IDE for free but to
+create a compiled program requires a license.  So as long as you remain in the IDE you can run your
+program all day long.  But to make an executable that does not require the IDE requires a license. 
+Xojo is trully cross platform.  From Windows for example you can press a button and the compiler 
+will generate your program to run on Windows, Mac and Lunux and I think they now support iOS as well.
+While Xojo is BASIC based it is object oriented and is pretty easy to learn.  It also has an active
+community forum that is good about answering questions.
+
+Tool addons:
+
+For Visual Studio I recommend the following two addons:
+
+Resharper
+NCrunch
+
+Resharper is a general purpose tool that extends the Visual Studio IDE with many features including
+helping you to write better code and suggest better options for constructs.  It is well worth the
+money if you get serious about developing in Visual Studio.  There is no doubt that everything 
+resharper adds can be done some way through native Visual Studio but it is just harder.
+
+NCrunch is a unit testing tool.  Again like resharper this is not needed but what it provides is
+a real time execution of your unit tests as you modify your code.  This gives you exacting feedback
+on if you are breaking some needed functionality.  The idea is based around TDD (Test Driven Development).
+Under TDD you code sort of backwards.  Lets say you want to have a class or module that manipulates strings
+and you need the following functionality for your program:
+
+Count charactes in the string and return the count
+Reverse the string
+Provide a checksum of the string (addition of all characters to return a number)
+
+In TDD you would start by creating your string class.  You create your methods (functions) to do
+the needed three functions above but you put zero code in so they are just empty functions.
+
+Then you create a unit test for your new class.  A unit test is just another class with some
+special attributes to tell the system it is a unit test.  Usually I put this in a sub directory
+below my actual classes.  
+
+In your unit test you write test functions to test the needed functionalities of your new string
+class.  So we'd have three:   Count characters, Reverse the string, Provide a checksum.  Initially
+all of your unit tests fail because your string class functions don't work.  Once you have your
+tests written you move back to your string class and you implement ONLY ENOUGH CODE to get your
+unit test to pass.
+
+With NCrunch, everytime you save your file your tests can be run and you will know instantly if 
+they pass and if things are working.  This is also nice if you have a complex class where some 
+things depend upon others.  If you break something then your unit tests begin to fail.  With 
+NCrunch you see this right away.
+
+While true/blue TDD is done as I describe above I tend to use a hybrid model where I actually
+do write my string class functions first but at the same time I start my unit tests in parallel.  
+I've been programming long enough that this works really well.  I think the true/blue TDD method 
+makes an assumption that is difficult for some people.  That assumption is that you know how to 
+test something you might not have designed yet.  TDD argues that you don't care how it is done you 
+just care about the result and that is what you should put in your unit test.
+
+Version Control Tools:
+
+The FlexCommunityAPIWork repository is hosted on GitHub.  GitHub can be used from the web.  Just point
+your browser at:  https://github.com/systechllc/FlexCommunityAPIWork.git
+
+From there you can see files and even download a zip of them.  However if you wish to contribute
+which means pushing stuff back up you have two real options:
+
+1) Get a tool or install the git tools that allow you to directly interact with GitHub
+2) Ask one of us that is connected to make the push for you
+
+I am told that the GitHub add in for Visual Studio does not work in the community (free) edition.
+So my suggestion is you download this tool:  https://www.sourcetreeapp.com/
+
+Source tree will connect directly to the Github and provides you a nice GUI interface for Git.
+
+Alternatively, if you are a command line person you can download the straight Git tools: https://git-for-windows.github.io/
+
+
+
