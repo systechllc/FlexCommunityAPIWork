@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <object name="AG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AudioGain"/>
+    <property name="Prefix" value="AG"/>
+    <property name="IsIndexed" value="true"/>
+    <property name="IndexLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="255"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="AI" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="int_AI"/>
+    <property name="Prefix" value="AI"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="FA" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="Freq0"/>
+    <property name="Prefix" value="FA"/>
+    <property name="SetLength" value="11"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="11"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="10000"/>
+        <property name="Max" value="165000000"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="FB" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="Freq1"/>
+    <property name="Prefix" value="FB"/>
+    <property name="SetLength" value="11"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="11"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="10000"/>
+        <property name="Max" value="165000000"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="FR" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="ActiveRX"/>
+    <property name="Prefix" value="FR"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="FT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="ActiveTX"/>
+    <property name="Prefix" value="FT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="GT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AGCModeK"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Prefix" value="GT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="4"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertAGCMode" />
+  </object>  
+  <object name="ID" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="ID"/>
+    <property name="Prefix" value="ID"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="999"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="IF" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="int_IF"/>
+    <property name="Prefix" value="IF"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="35"/>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="KS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="CWSpeed"/>
+    <property name="Prefix" value="KS"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="60"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="KY" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="CWSend"/>
+    <property name="Prefix" value="KY"/>
+    <property name="SetLength" value="25"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="MD" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="DemodMode0K"/>
+    <property name="Prefix" value="MD"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="9"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertDemodMode" />
+  </object>
+  <object name="MG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="MicLevel"/>
+    <property name="Prefix" value="MG"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="NB" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="NBOn0"/>
+    <property name="Prefix" value="NB"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="NT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="NT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="PC" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RFPower"/>
+    <property name="Prefix" value="PC"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="PT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="KPitch"/>
+    <property name="Prefix" value="PT"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="80"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="RC" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITClear"/>
+    <property name="Prefix" value="RC"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="RD" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITDown"/>
+    <property name="Prefix" value="RD"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="0"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="6000"/>
+      </object>
+    </property>
+    <property name="StateMgr" ref="CatStateManager"/>
+  </object>
+  <object name="RT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITOn"/>
+    <property name="Prefix" value="RT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="RU" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITUp"/>
+    <property name="Prefix" value="RU"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="0"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="6000"/>
+      </object>
+    </property>
+    <property name="StateMgr" ref="CatStateManager"/>
+  </object>
+  <object name="RX" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RX"/>
+    <property name="Prefix" value="RX"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="SH" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="KWFilterHi"/>
+    <property name="Prefix" value="SH"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="11"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertKWDSPFilter" />
+  </object>
+  <object name="SL" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="KWFilterLo"/>
+    <property name="Prefix" value="SL"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="11"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertKWDSPFilter" />
+  </object>
+  <object name="SM" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="KSmeter"/>
+    <property name="Prefix" value="SM"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="IsIndexed" value="true"/>
+    <property name="IndexLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="4"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="30"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="TX" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="TX"/>
+    <property name="Prefix" value="TX"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="XT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="XITOn"/>
+    <property name="Prefix" value="XT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZAG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AFGain0"/>
+    <property name="Prefix" value="ZZAG"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref="CatStateManager"/>
+  </object>
+  <object name="ZZAI" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="int_AI"/>
+    <property name="Prefix" value="ZZAI"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZAR" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AGCThreshold0"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZAR"/>
+    <property name="SetLength" value="4"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="4"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZAS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AGCThreshold1"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZAS"/>
+    <property name="SetLength" value="4"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="4"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZBI" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="BinauralRX"/>
+    <property name="Prefix" value="ZZBI"/>
+    <property name="SetLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZCL" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZCL"/>
+    <property name="SetLength" value="4"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="4"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="200"/>
+        <property name="Max" value="1200"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZCS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZCS"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="60"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZDE" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="Diversity"/>
+    <property name="Prefix" value="ZZDE"/>
+    <property name="SetLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object id="ZZFA" type="Cat.Cat.CatBase, Cat" singleton="true" >
+    <property name="API" value="Freq0"/>
+    <property name="Prefix" value="ZZFA"/>
+    <property name="SetLength" value="11"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="11"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="10000"/>
+        <property name="Max" value="165000000"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object id="ZZFB" type="Cat.Cat.CatBase, Cat" singleton="true" >
+    <property name="API" value="Freq1"/>
+    <property name="Prefix" value="ZZFB"/>
+    <property name="SetLength" value="11"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="11"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="10000"/>
+        <property name="Max" value="165000000"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>  
+  <object name="ZZFI" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RXFilter0"/>
+    <property name="Prefix" value="ZZFI"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="11"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertFlexDSPFilter" />
+  </object>
+  <object name="ZZFJ" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RXFilter1"/>
+    <property name="Prefix" value="ZZFJ"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="11"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertFlexDSPFilter" />
+  </object>
+  <object name="ZZFR" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="ActiveRXToggle"/>
+    <property name="Prefix" value="ZZFR"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZFT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="ActiveTXToggle"/>
+    <property name="Prefix" value="ZZFT"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZGT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AGCModeF"/>
+    <property name="Prefix" value="ZZGT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+      <property name="Min" value="0"/>
+      <property name="Max" value="4"/>
+    </object>
+  </property>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertAGCMode" />
+  </object>
+  <object name="ZZIF" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="int_ZZIF"/>
+    <property name="Prefix" value="ZZIF"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="36"/>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZIX" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="int_ZZIX"/>
+    <property name="Prefix" value="ZZIX"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="36"/>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZLB" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AudioPan0"/>
+    <property name="Prefix" value="ZZLB"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZLF" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AudioPan1"/>
+    <property name="Prefix" value="ZZLF"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZLE" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AFGain1"/>
+    <property name="Prefix" value="ZZLE"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZMA" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AudioMute0"/>
+    <property name="Prefix" value="ZZMA"/>
+    <property name="SetLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZMB" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="AudioMute1"/>
+    <property name="Prefix" value="ZZMB"/>
+    <property name="SetLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZMD" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="DemodMode0F"/>
+    <property name="Prefix" value="ZZMD"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="99"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertDemodMode" />
+  </object>
+  <object name="ZZME" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="DemodMode1F"/>
+    <property name="Prefix" value="ZZME"/>
+    <property name="SetLength" value="2"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="2"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="99"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+    <property name="CatAPIFormatter" ref="convertDemodMode" />
+  </object>
+  <object name="ZZMG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="MicLevel"/>
+    <property name="Prefix" value="ZZMG"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+
+  <object name="ZZMU" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="MultiRX"/>
+    <property name="Prefix" value="ZZMU"/>
+    <property name="SetLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="1"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>  
+  <object name="ZZNL" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="NBLevel0"/>
+    <property name="Prefix" value="ZZNL"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="1"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZNR" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="NROn"/>
+    <property name="Prefix" value="ZZNR"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZPA" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZPA"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="4"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZPC" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RFPower"/>
+    <property name="Prefix" value="ZZPC"/>
+    <property name="SetLength" value="3"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="100"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object id="ZZPF" type="Cat.Cat.CatBase, Cat" singleton="true" >
+    <property name="API" value="PanadapterCenterFreq"/>
+    <property name="Prefix" value="ZZPF"/>
+    <property name="SetLength" value="11"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="11"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="10000"/>
+        <property name="Max" value="65000000"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZPS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="PowerOn"/>
+    <property name="Prefix" value="ZZPS"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRC" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITClear"/>
+    <property name="Prefix" value="ZZRC"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRD" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITDown"/>
+    <property name="Prefix" value="ZZRD"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="0"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="6000"/>
+      </object>
+    </property>
+    <property name="StateMgr" ref="CatStateManager"/>
+  </object>
+  <object name="ZZRG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITFreq"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZRG"/>
+    <property name="SetLength" value="6"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="6"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="-99999"/>
+        <property name="Max" value="99999"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRF" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITFreq"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZRF"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="5"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="-99999"/>
+        <property name="Max" value="99999"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZRS"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRT" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITOn"/>
+    <property name="Prefix" value="ZZRT"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRU" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITUp"/>
+    <property name="Prefix" value="ZZRU"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="0"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="6000"/>
+      </object>
+    </property>
+    <property name="StateMgr" ref="CatStateManager"/>
+  </object>
+  <object name="ZZRW" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITFreqB"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZRW"/>
+    <property name="SetLength" value="5"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="5"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="-99999"/>
+        <property name="Max" value="99999"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRX" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="Mox"/>
+    <property name="Prefix" value="ZZRX"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZRY" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="RITOnB"/>
+    <property name="Prefix" value="ZZRY"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZSM" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="FSmeter"/>
+    <property name="Prefix" value="ZZSM"/>
+    <property name="IsReadOnly" value="true"/>
+    <property name="IsIndexed" value="true"/>
+    <property name="IndexLength" value="1"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="3"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="0"/>
+        <property name="Max" value="260"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZSP" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZSP"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZSW" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="TXVFO"/>
+    <property name="Prefix" value="ZZSW"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZSY" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZSY"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZTU" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value=""/>
+    <property name="Prefix" value="ZZTU"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZTX" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="Mox"/>
+    <property name="Prefix" value="ZZTX"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZXC" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="XITClear"/>
+    <property name="Prefix" value="ZZXC"/>
+    <property name="IsWriteOnly" value="true"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+  <object name="ZZXG" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="XITFreq"/>
+    <property name="IsPolarized" value="true"/>
+    <property name="Prefix" value="ZZXG"/>
+    <property name="SetLength" value="6"/>
+    <property name="GetLength" value="0"/>
+    <property name="AnswerLength" value="6"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat">
+        <property name="Min" value="-99999"/>
+        <property name="Max" value="99999"/>
+      </object>
+    </property>
+    <property name="CatReturnFormatter" ref="addPolarity"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+
+  <object name="ZZXS" singleton="true" type="Cat.Cat.CatBase, Cat">
+    <property name="API" value="XITOn"/>
+    <property name="Prefix" value="ZZXS"/>
+    <property name="Range">
+      <object type="Cat.Cat.Formatters.ValidRange, Cat"/>
+    </property>
+    <property name="CatReturnFormatter" ref="addLeadingZeros"/>
+    <property name="StateMgr" ref ="CatStateManager" />
+  </object>
+
+  <object id="readMultiMeter" type="Cat.Cat.Formatters.ReadMultiMeter, Cat"/>
+  <object id="addPolarity" type="Cat.Cat.Formatters.AddPolarity, Cat"/>
+  <object id="addLeadingZeros" type="Cat.Cat.Formatters.AddLeadingZeros, Cat"/>
+  <object id="CatStateManager" type="Cat.Cat.CatStateManager, Cat" />
+  <object id="convertDemodMode" type="Cat.Cat.Formatters.ConvertDemodMode, Cat" />
+  <object id="convertFlexDSPFilter" type="Cat.Cat.Formatters.ConvertFlexDSPFilter, Cat" />
+  <object id="convertKWDSPFilter" type="Cat.Cat.Formatters.ConvertKWDSPFilter, Cat" />
+  <object id="convertAGCMode" type="Cat.Cat.Formatters.ConvertAGCMode, Cat" />
+</objects>

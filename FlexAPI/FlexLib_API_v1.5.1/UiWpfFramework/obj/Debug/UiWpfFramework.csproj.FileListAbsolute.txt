@@ -1,0 +1,4 @@
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\UiWpfFramework\bin\Debug\Flex.UiWpfFramework.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\UiWpfFramework\bin\Debug\Flex.UiWpfFramework.pdb
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\UiWpfFramework\obj\Debug\Flex.UiWpfFramework.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\UiWpfFramework\obj\Debug\Flex.UiWpfFramework.pdb

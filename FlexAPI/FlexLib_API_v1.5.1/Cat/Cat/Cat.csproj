@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76814E09-904F-49ED-B183-03D09FF3A0D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cat</RootNamespace>
+    <AssemblyName>Cat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CAT.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e">
+      <HintPath>..\..\..\..\..\..\..\Program Files (AnyCPU)\Spring.NET 1.3.2\bin\net\4.0\release\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="ftvspknet, Version=5.4.4.0, Culture=neutral, PublicKeyToken=ac8f47ea93304b2c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\ftvspknet.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL" />
+    <Reference Include="Spring.Aop">
+      <HintPath>Libs\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (AnyCPU)\Spring.NET 1.3.2\bin\net\4.0\release\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CatAfterAdvice.cs" />
+    <Compile Include="CatMain\CatBase.cs" />
+    <Compile Include="CatMain\CatCache.cs" />
+    <Compile Include="CatMain\CatCmdProcessor.cs" />
+    <Compile Include="CatMain\CatStatus.cs" />
+    <Compile Include="CatMain\Formatters\AddLeadingZeros.cs" />
+    <Compile Include="CatMain\Formatters\AddPolarity.cs" />
+    <Compile Include="CatMain\Formatters\ConvertAGCMode.cs" />
+    <Compile Include="CatMain\Formatters\ConvertFlexDSPFilter.cs" />
+    <Compile Include="CatMain\Formatters\ConvertKWDSPFilter.cs" />
+    <Compile Include="CatMain\Formatters\ReadMultiMeter.cs" />
+    <Compile Include="CatMain\Formatters\ValidRange.cs" />
+    <Compile Include="CatMain\Formatters\ConvertDemodMode.cs" />
+    <Compile Include="CatMain\Interfaces\ICatReturnFormat.cs" />
+    <Compile Include="CatMain\Interfaces\ISerialComSpec.cs" />
+    <Compile Include="CatMain\Interfaces\ISerialPort.cs" />
+    <Compile Include="CatMain\CatStateManager.cs" />
+    <Compile Include="CatMain\Interfaces\ICatCmd.cs" />
+    <Compile Include="CatMain\CatValidation.cs" />
+    <Compile Include="CatMain\Interfaces\ICatStateMgr.cs" />
+    <Compile Include="CatMain\Ports\CatSerialPort.cs" />
+    <Compile Include="CatMain\Ports\DefaultSerialComSpec.cs" />
+    <Compile Include="CatMain\Ports\OTRSP.cs" />
+    <Compile Include="CatMain\Ports\PortInfo.cs" />
+    <Compile Include="CatMain\Ports\SerialComSpec.cs" />
+    <Compile Include="CatMain\Ports\SerialPortManager.cs" />
+    <Compile Include="CatMain\Ports\TcpPortManager.cs" />
+    <Compile Include="CatMain\Ports\WinKeyer.cs" />
+    <Compile Include="CatMain\Ports\WinKeyer2.cs" />
+    <Compile Include="CatMain\PortValidationTests\PortValidation.cs" />
+    <Compile Include="CatAroundAdvice.cs" />
+    <Compile Include="CatMain\CatStatusWord.cs" />
+    <Compile Include="CatMain\TransceiverStatus.cs" />
+    <Compile Include="Cfg\DataManager.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObjectManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="VSPK\VSPKcore-Intel.msm" />
+    <None Include="VSPK\VSPKcore-x64.msm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CAT.ico" />
+    <Content Include="Cfg\Libs\CAT.ico" />
+    <Content Include="Cfg\Libs\CatClasses.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Cfg\Libs\CatLog4net.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\Common.Logging.dll" />
+    <Content Include="Libs\ftvspknet.dll" />
+    <Content Include="Libs\log4net.dll" />
+    <Content Include="Libs\Spring.Core.dll" />
+    <Content Include="VSPK\BrandedKey.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FlexLib\FlexLib.csproj">
+      <Project>{7927817C-D5EF-4A9E-B38E-29668F308343}</Project>
+      <Name>FlexLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UiWpfFramework\UiWpfFramework.csproj">
+      <Project>{9C0AD871-92FD-461B-84FF-3738D701814F}</Project>
+      <Name>UiWpfFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Util\Util.csproj">
+      <Project>{38935DC9-FF48-470C-B876-473A3AE8BD32}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Vita\Vita.csproj">
+      <Project>{6ED364FB-7444-44DA-9196-1D8679425B3E}</Project>
+      <Name>Vita</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AsyncSocketsV2\AsyncSocketsV2.csproj">
+      <Project>{9EC466E7-57C9-4B00-B5F0-A0B84DE6155C}</Project>
+      <Name>AsyncSocketsV2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,7 @@
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\bin\Debug\Vita.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\bin\Debug\Vita.pdb
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\bin\Debug\Util.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\bin\Debug\Util.pdb
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\obj\Debug\Vita.csprojResolveAssemblyReference.cache
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\obj\Debug\Vita.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Vita\obj\Debug\Vita.pdb

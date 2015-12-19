@@ -1,0 +1,4 @@
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Cat\AsyncSocketsV2\bin\Debug\AsyncSocketsV2.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Cat\AsyncSocketsV2\bin\Debug\AsyncSocketsV2.pdb
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Cat\AsyncSocketsV2\obj\Debug\AsyncSocketsV2.dll
+C:\Dropbox\MRHData\FlexRadio\FlexLib_API_v1.5.1\Cat\AsyncSocketsV2\obj\Debug\AsyncSocketsV2.pdb
