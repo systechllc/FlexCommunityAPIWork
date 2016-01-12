@@ -26,7 +26,7 @@ using System.Net.Sockets;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;     // for AutoResetEvent
-using System.Windows;       // for Size
+// for Size
 using Flex.Smoothlake.Vita;
 using Flex.UiWpfFramework.Mvvm;
 using Flex.Util;

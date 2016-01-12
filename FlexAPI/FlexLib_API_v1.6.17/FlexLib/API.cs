@@ -14,14 +14,11 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-using System.Linq;
-using System.Text;
 using System.IO;
 
 using System.Net;
 using System.Diagnostics;
-using System.ComponentModel;
-using System.Collections.ObjectModel; // for ObservableCollection
+// for ObservableCollection
 using System.Threading;
 
 using Flex.Smoothlake.Vita;

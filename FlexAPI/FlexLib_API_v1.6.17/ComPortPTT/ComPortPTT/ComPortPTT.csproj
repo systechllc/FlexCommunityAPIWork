@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Flex.UiWpfFramework">
+      <HintPath>..\..\UiWpfFramework\bin\x86\Debug\Flex.UiWpfFramework.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -82,13 +85,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\smartsdr-win\FlexLib\FlexLib.csproj">
-      <Project>{7927817C-D5EF-4A9E-B38E-29668F308343}</Project>
+    <ProjectReference Include="..\..\FlexLib\FlexLib.csproj">
+      <Project>{7927817c-d5ef-4a9e-b38e-29668f308343}</Project>
       <Name>FlexLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\smartsdr-win\UiWpfFramework\UiWpfFramework.csproj">
-      <Project>{9C0AD871-92FD-461B-84FF-3738D701814F}</Project>
-      <Name>UiWpfFramework</Name>
+    <ProjectReference Include="..\..\Util\Util.csproj">
+      <Project>{38935dc9-ff48-470c-b876-473a3ae8bd32}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Vita\Vita.csproj">
+      <Project>{6ed364fb-7444-44da-9196-1d8679425b3e}</Project>
+      <Name>Vita</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

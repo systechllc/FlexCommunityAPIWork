@@ -22,9 +22,6 @@
 // modified from Ray Molenkamp's original
 
 
-using System;
-using System.Collections.Generic;
-using System.Text;
 using NAudio.CoreAudioApi.Interfaces;
 
 namespace NAudio.CoreAudioApi

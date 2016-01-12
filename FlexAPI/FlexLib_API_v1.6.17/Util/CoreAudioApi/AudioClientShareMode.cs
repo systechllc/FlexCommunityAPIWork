@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NAudio.CoreAudioApi
+﻿namespace NAudio.CoreAudioApi
 {
     /// <summary>
     /// AUDCLNT_SHAREMODE

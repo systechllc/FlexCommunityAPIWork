@@ -20,9 +20,8 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 // updated for NAudio
-using System;
+
 using System.Collections.Generic;
-using System.Text;
 using System.Runtime.InteropServices;
 using NAudio.CoreAudioApi.Interfaces;
 

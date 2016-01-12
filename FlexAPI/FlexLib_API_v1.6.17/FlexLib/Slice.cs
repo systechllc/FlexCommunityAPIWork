@@ -13,12 +13,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-
 using System.Diagnostics;
-using System.ComponentModel;
 using Flex.UiWpfFramework.Mvvm;
 using System.Globalization;
 using Flex.Util;

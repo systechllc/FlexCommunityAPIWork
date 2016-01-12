@@ -55,7 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
-      <HintPath>..\SmartSDR\SmartSDR\Libs\Ionic.Zip.dll</HintPath>
+      <HintPath>..\libs\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -91,15 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UiWpfFramework\UiWpfFramework.csproj">
-      <Project>{9C0AD871-92FD-461B-84FF-3738D701814F}</Project>
+      <Project>{9c0ad871-92fd-461b-84ff-3738d701814f}</Project>
       <Name>UiWpfFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Util\Util.csproj">
-      <Project>{38935DC9-FF48-470C-B876-473A3AE8BD32}</Project>
+      <Project>{38935dc9-ff48-470c-b876-473a3ae8bd32}</Project>
       <Name>Util</Name>
     </ProjectReference>
     <ProjectReference Include="..\Vita\Vita.csproj">
-      <Project>{6ED364FB-7444-44DA-9196-1D8679425B3E}</Project>
+      <Project>{6ed364fb-7444-44da-9196-1d8679425b3e}</Project>
       <Name>Vita</Name>
     </ProjectReference>
   </ItemGroup>

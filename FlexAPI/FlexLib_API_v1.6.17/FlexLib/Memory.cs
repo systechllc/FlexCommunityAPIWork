@@ -12,11 +12,8 @@
 // ****************************************************************************
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Windows.Media; // for Color class
+// for Color class
 
 using Flex.UiWpfFramework.Mvvm;
 using Flex.Util;

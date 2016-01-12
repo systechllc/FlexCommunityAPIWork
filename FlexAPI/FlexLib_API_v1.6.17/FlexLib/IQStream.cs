@@ -11,19 +11,12 @@
 // */
 // ****************************************************************************
 
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
 using System.Threading;
 using Flex.UiWpfFramework.Mvvm;
 using Flex.Smoothlake.Vita;
-using Flex.Util;
 
 namespace Flex.Smoothlake.FlexLib
 {
